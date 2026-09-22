@@ -1,1 +1,40 @@
+/* Container for the children and the tooltip */
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
 
+/* The hidden tooltip text */
+.tooltiptext {
+  visibility: visible; /* Controlled by React state, so always visible when rendered */
+  width: 140px;
+  background-color: red;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 10px;
+  
+  /* Positioning */
+  position: absolute;
+  z-index: 1;
+  bottom: 125%; /* Position above the text */
+  left: 50%;
+  margin-left: -70px; /* Center the tooltip */
+  
+  /* Font styling */
+  font-family: serif;
+  font-size: 16px;
+  line-height: 1.2;
+}
+
+/* Optional: Add a small arrow at the bottom of the tooltip */
+.tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 100%; /* At the bottom of the tooltip */
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: red transparent transparent transparent;
+}
